@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  nginx:
+    build: ./
+    ports:
+      - "80:80"
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./upstream:/etc/nginx/upstream/
+    restart: always
